@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import VerificationController from './Components/VerificationController';
+import ProductList from './View/ProductList';
+import ProtectedRoute from './Components/ProtectedRoute';
+import LoginController from './Components/LoginController';
+import { UserAuthContextProvider } from './Context/UserAuthContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <UserAuthContextProvider>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <ProtectedRoute>
+                <ProductList />
+              </ProtectedRoute>
+            }
+          />
+          <Route path='/login' element={<LoginController />} />
+          <Route path='/verification' element={<VerificationController />} />
+        </Routes>
+      </UserAuthContextProvider>
     </div>
   );
 }

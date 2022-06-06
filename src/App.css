@@ -1,38 +1,20 @@
-.App {
+.pinInput {
+  width: 35px;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 5px;
+  border: #e8e8e8;
+  font-family: Montserrat Alternates;
+  border-width: 1px;
+  border-style: solid;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pinInput:focus-visible {
+  outline: #9ad219 auto 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pinInput:hover {
+  border-color: #7ba814;
 }
